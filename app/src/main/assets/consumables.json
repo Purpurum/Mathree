@@ -1,0 +1,10 @@
+[
+  {
+    "id": 301,
+    "imagePath": "img/warrior.png",
+    "name": "Зелье лечения",
+    "type": "consumable",
+    "effect": "health",
+    "value": 50
+  }
+]

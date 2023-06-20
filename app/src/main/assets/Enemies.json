@@ -1,0 +1,163 @@
+[
+  {
+    "castleType": "Dark",
+    "difficulty": "Easy",
+    "monsters": [
+      {
+        "name": "Demon-Skeleton",
+        "icon": "img/daemon-skull.png",
+        "maxhealth": 30,
+        "mana": 0,
+        "enemyType": "Undead",
+        "physicalResistance": 0,
+        "magicalResistance": 0,
+        "damageType": "Physical",
+        "damage": 5,
+        "abilities": [1, 2, 3],
+        "essenceDrop": 10
+      },
+      {
+        "name": "Ghost",
+        "icon": "img/ghost.png",
+        "maxhealth": 50,
+        "mana": 30,
+        "enemyType": "Undead",
+        "physicalResistance": 0,
+        "magicalResistance": 0,
+        "damageType": "Magical",
+        "damage": 10,
+        "abilities": [4, 5],
+        "essenceDrop": 15
+      }
+    ]
+  },
+  {
+    "castleType": "Dark",
+    "difficulty": "Boss",
+    "monsters": [
+      {
+        "name": "Скелет гемомант",
+        "icon": "img/skull-sabertooth.png",
+        "maxhealth": 150,
+        "enemyType": "Undead",
+        "physicalResistance": 0,
+        "magicalResistance": 0,
+        "damageType": "Magical",
+        "damage": 20,
+        "abilities": [1, 2, 3],
+        "essenceDrop": 50
+      },
+      {
+        "name": "Летающий череп",
+        "icon": "img/ghost.png",
+        "maxhealth": 15,
+        "enemyType": "Undead",
+        "physicalResistance": 0,
+        "magicalResistance": 0,
+        "damageType": "Physical",
+        "damage": 10,
+        "abilities": [4, 5],
+        "essenceDrop": 15
+      },
+      {
+        "name": "Летающий череп",
+        "icon": "img/ghost.png",
+        "maxhealth": 15,
+        "enemyType": "Undead",
+        "physicalResistance": 0,
+        "magicalResistance": 0,
+        "damageType": "Physical",
+        "damage": 10,
+        "abilities": [4, 5],
+        "essenceDrop": 15
+      }
+    ]
+  },
+  {
+    "castleType": "Dark",
+    "difficulty": "Easy",
+    "monsters": [
+      {
+        "name": "Big Ghost",
+        "icon": "img/haunting.png",
+        "maxhealth": 100,
+        "castleType": "Dark",
+        "enemyType": "Undead",
+        "physicalResistance": 0,
+        "magicalResistance": 0,
+        "damageType": "Magical",
+        "damage": 15,
+        "abilities": [6, 7, 8, 9],
+        "essenceDrop": 20
+      },
+      {
+        "name": "Ghost",
+        "icon": "img/ghost.png",
+        "maxhealth": 50,
+        "enemyType": "Undead",
+        "physicalResistance": 0,
+        "magicalResistance": 0,
+        "damageType": "Magical",
+        "damage": 10,
+        "abilities": [4, 5],
+        "essenceDrop": 15
+      },
+      {
+        "name": "Big Ghost",
+        "icon": "img/haunting.png",
+        "maxhealth": 100,
+        "castleType": "Dark",
+        "enemyType": "Undead",
+        "physicalResistance": 0,
+        "magicalResistance": 0,
+        "damageType": "Magical",
+        "damage": 15,
+        "abilities": [6, 7, 8, 9],
+        "essenceDrop": 20
+      }
+    ]
+  },
+  {
+    "castleType": "Blood",
+    "difficulty": "Easy",
+    "monsters": [
+      {
+        "name": "Vampire",
+        "icon": "img/female-vampire.png",
+        "maxhealth": 100,
+        "enemyType": "Bloodsucker",
+        "physicalResistance": 0,
+        "magicalResistance": 0,
+        "damageType": "Physical",
+        "damage": 20,
+        "abilities": [1, 2, 3],
+        "essenceDrop": 30
+      },
+      {
+        "name": "Giant Bat",
+        "icon": "img/evil-bat.png",
+        "maxhealth": 50,
+        "enemyType": "Bloodsucker",
+        "physicalResistance": 0,
+        "magicalResistance": 0,
+        "damageType": "Physical",
+        "damage": 20,
+        "abilities": [4, 5],
+        "essenceDrop": 20
+      },
+      {
+        "name": "Blood Slime",
+        "icon": "img/vile-fluid.png",
+        "maxhealth": 150,
+        "castleType": "Blood",
+        "enemyType": "Slime",
+        "physicalResistance": 0,
+        "magicalResistance": 0,
+        "damageType": "Physical",
+        "damage": 25,
+        "abilities": [6, 7, 8, 9],
+        "essenceDrop": 40
+      }
+    ]
+  }
+]

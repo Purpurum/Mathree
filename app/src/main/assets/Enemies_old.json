@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Demon-Skeleton",
+    "icon": "img/daemon-skull.png",
+    "maxhealth": 30,
+    "mana": 0,
+    "castleType": "Dark",
+    "enemyType": "Undead",
+    "physicalResistance": 0,
+    "magicalResistance": 0,
+    "damageType": "Physical",
+    "abilities": [1, 2, 3]
+  },
+  {
+    "name": "Ghost",
+    "icon": "img/ghost.png",
+    "maxhealth": 50,
+    "mana": 30,
+    "castleType": "Dark",
+    "enemyType": "Undead",
+    "physicalResistance": 0,
+    "magicalResistance": 0,
+    "damageType": "Magical",
+    "abilities": [4, 5]
+  },
+  {
+    "name": "Big Ghost",
+    "icon": "img/haunting.png",
+    "maxhealth": 100,
+    "mana": 80,
+    "castleType": "Dark",
+    "enemyType": "Undead",
+    "physicalResistance": 0,
+    "magicalResistance": 0,
+    "damageType": "Magical",
+    "abilities": [6, 7, 8, 9]
+  },
+  {
+    "name": "Vampire",
+    "icon": "img/female-vampire.png",
+    "maxhealth": 100,
+    "mana": 50,
+    "castleType": "Blood",
+    "enemyType": "Bloodsucker",
+    "physicalResistance": 0,
+    "magicalResistance": 0,
+    "damageType": "Physical",
+    "abilities": [1, 2, 3]
+  },
+  {
+    "name": "Giant Bat",
+    "icon": "img/evil-bat.png",
+    "maxhealth": 30,
+    "mana": 0,
+    "castleType": "Blood",
+    "enemyType": "Bloodsucker",
+    "physicalResistance": 0,
+    "magicalResistance": 0,
+    "damageType": "Physical",
+    "abilities": [4, 5]
+  },
+  {
+    "name": "Blood Slime",
+    "icon": "img/vile-fluid.png",
+    "maxhealth": 150,
+    "mana": 0,
+    "castleType": "Blood",
+    "enemyType": "Slime",
+    "physicalResistance": 0,
+    "magicalResistance": 0,
+    "damageType": "Physical",
+    "abilities": [6, 7, 8, 9]
+  }
+]

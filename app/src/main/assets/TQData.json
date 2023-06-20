@@ -1,0 +1,121 @@
+[
+  {
+    "castleType": "Dark",
+    "imgPath": "img/dark-castle.png",
+    "type": "random",
+    "id": 1,
+    "text": "Вы подходите к замку, что вы будете делать?",
+    "options": [
+      {
+        "text": "Осмотреть замок",
+        "outcome": [
+          {
+            "type": "open dialog",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "text": "Войти в замок",
+        "outcome": [
+          {
+            "type": "hp",
+            "value": -10
+          },
+          {
+            "type": "item",
+            "value": 102
+          },
+          {
+            "type": "essence",
+            "value": 123
+          },
+          {
+            "type": "change text",
+            "value": "Войдя в замок вы нашли тело человека, неожиданно для вас, оно поднялось, ударило вас и развалилось, оставив после себя немного эссенции и кожаный шлем."
+          }
+        ],
+        "ender": true
+      },
+      {
+        "text": "Держаться подальше",
+        "outcome": [
+          {
+            "type": "change text",
+            "value": "Вы решили не риссковать и ушли прочь."
+          }
+        ],
+        "ender": true
+      }
+    ]
+  },
+  {
+    "castleType": "Blood",
+    "imgPath": "img/blood-castle.png",
+    "type": "random",
+    "id": 2,
+    "text": "You stumble upon a blood-soaked castle. What do you do?",
+    "options": [
+      {
+        "text": "Investigate further",
+        "outcome": [
+          {
+            "type": "hp",
+            "value": -20
+          },
+          {
+            "type": "essence",
+            "value": 50
+          },
+          {
+            "type": "item",
+            "value": 456
+          }
+        ],
+        "ender": true
+      },
+      {
+        "text": "Leave immediately",
+        "outcome": [
+          {
+            "type": "change text",
+            "value": "You decide it's best to leave the ominous castle behind."
+          }
+        ],
+        "ender": true
+      }
+    ]
+  },
+  {
+    "castleType": "Tech",
+    "imgPath": "img/tech-castle.png",
+    "type": "random",
+    "id": 3,
+    "text": "You come across a futuristic tech castle. What do you do?",
+    "options": [
+      {
+        "text": "Explore its wonders",
+        "outcome": [
+          {
+            "type": "essence",
+            "value": 100
+          },
+          {
+            "type": "item",
+            "value": 789
+          }
+        ]
+      },
+      {
+        "text": "Ignore and move on",
+        "outcome": [
+          {
+            "type": "change text",
+            "value": "You resist the temptation and continue your journey."
+          }
+        ],
+        "ender": true
+      }
+    ]
+  }
+]

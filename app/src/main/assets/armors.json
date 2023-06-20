@@ -1,0 +1,35 @@
+[
+  {
+    "id": 101,
+    "imagePath": "img/rogue.png",
+    "name": "Железный шлем",
+    "type": "armor",
+    "isEquipable": true,
+    "defence": 10,
+    "statmodifier": "strength",
+    "modifier": 2,
+    "slot": "head"
+  },
+  {
+    "id": 102,
+    "imagePath": "img/rogue.png",
+    "name": "Кожаный капюшон",
+    "type": "armor",
+    "isEquipable": true,
+    "defence": 10,
+    "statmodifier": "dexterity",
+    "modifier": 2,
+    "slot": "head"
+  },
+  {
+    "id": 103,
+    "imagePath": "img/rogue.png",
+    "name": "Шляпа волшебника",
+    "type": "armor",
+    "isEquipable": true,
+    "defence": 10,
+    "statmodifier": "intelligence",
+    "modifier": 2,
+    "slot": "head"
+  }
+]

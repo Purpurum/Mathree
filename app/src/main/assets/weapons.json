@@ -1,0 +1,52 @@
+[
+  {
+    "id": 201,
+    "imagePath": "img/snowflake-1.png",
+    "name": "Железный меч",
+    "type": "weapon",
+    "isEquipable": true,
+    "damage": 10,
+    "statModifier": "strength",
+    "modifier": 0.25
+  },
+  {
+    "id": 202,
+    "imagePath": "img/snowflake-1.png",
+    "name": "Короткий лук",
+    "type": "weapon",
+    "isEquipable": true,
+    "damage": 10,
+    "statModifier": "dexterity",
+    "modifier": 0.25
+  },
+  {
+    "id": 203,
+    "imagePath": "img/snowflake-1.png",
+    "name": "Деревянный жезл",
+    "type": "weapon",
+    "isEquipable": true,
+    "damage": 10,
+    "statModifier": "intelligence",
+    "modifier": 0.25
+  },
+  {
+    "id": 204,
+    "imagePath": "img/snowflake-1.png",
+    "name": "Экскалибур",
+    "type": "weapon",
+    "isEquipable": true,
+    "damage": 20,
+    "statModifier": "strength",
+    "modifier": 1.0
+  },
+  {
+    "id": 205,
+    "imagePath": "img/snowflake-1.png",
+    "name": "Волшебный шар",
+    "type": "weapon",
+    "isEquipable": true,
+    "damage": 1,
+    "statModifier": "intelligence",
+    "modifier": 1.0
+  }
+]

@@ -1,0 +1,19 @@
+<resources>
+
+    <string name="app_name">Mathree</string>
+    <!-- Главное меню -->
+    <string name="start">Начать</string>
+    <string name="clearData">Стереть данные</string>
+    <string name="Authors">Создатели игры</string>
+
+    <!-- Создание персонажа -->
+    <string name="warrior">Воин</string>
+    <string name="wizard">Волшебник</string>
+    <string name="rogue">Плут</string>
+    <string name="chooseClassTW">Класс персонажа</string>
+    <string name="writeName">Имя персонажа</string>
+    <string name="writeHint">Populous the brave</string>
+    <string name="createChar">Создать</string>
+    <string name="classDesc">Описание класса</string>
+</resources>
+

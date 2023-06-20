@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Огненный шар",
+    "damage": 100,
+    "statmodifier": "intelligence",
+    "modifier": 0.25,
+    "AOE": "True",
+    "icon": "img/burning-round-shot.png",
+    "cooldown": 0
+  },
+  {
+    "id": 2,
+    "name": "Заморозка",
+    "damage": 10,
+    "statmodifier": "intelligence",
+    "modifier": 0.25,
+    "stun": "True",
+    "icon": "img/snowflake-1.png",
+    "cooldown": 3
+  },
+  {
+    "id": 2,
+    "name": "Корневая плеть",
+    "damage": 10,
+    "statmodifier": "intelligence",
+    "modifier": 0.25,
+    "AOE": "True",
+    "icon": "img/thorn.png",
+    "cooldown": 2
+  }
+]
