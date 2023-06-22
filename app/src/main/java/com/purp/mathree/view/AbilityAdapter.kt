@@ -1,6 +1,8 @@
 package com.purp.mathree.view
 
 import android.graphics.Color
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.purp.mathree.R
 import com.purp.mathree.model.Ability
@@ -21,6 +24,7 @@ class AbilityAdapter(private val abilityList: List<Ability>,
 
     private var selectedItemPosition: Int = RecyclerView.NO_POSITION
     private var abilitySelectionChangeListener: AbilitySelectionChangeListener? = null
+
 
     fun setAbilitySelectionChangeListener(listener: AbilitySelectionChangeListener?) {
         abilitySelectionChangeListener = listener
@@ -57,7 +61,13 @@ class AbilityAdapter(private val abilityList: List<Ability>,
 
         }
         if (selectedItemPosition == position) {
+
             holder.itemView.setBackgroundColor(Color.parseColor("#AAAAAA"))
+
+            Handler(Looper.getMainLooper()).postDelayed({
+                holder.itemView.setBackgroundColor(Color.parseColor("#000000"))
+            }, 200)
+            selectedItemPosition = RecyclerView.NO_POSITION
         } else {
             holder.itemView.setBackgroundColor(Color.parseColor("#000000"))
         }
@@ -85,7 +95,7 @@ class AbilityAdapter(private val abilityList: List<Ability>,
             nameTextView.text = ability.name
             damageTextView.text = "Damage: ${ability.damage}"
             loadImageFromAsset(iconImageView, ability.icon)
-            }
         }
+    }
 
 }

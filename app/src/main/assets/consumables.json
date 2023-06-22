@@ -1,10 +1,18 @@
 [
   {
     "id": 301,
-    "imagePath": "img/warrior.png",
+    "imagePath": "img/potion-ball.png",
     "name": "Зелье лечения",
     "type": "consumable",
     "effect": "health",
     "value": 50
+  },
+  {
+    "id": 302,
+    "imagePath": "img/holy-symbol.png",
+    "name": "Сияющий крест",
+    "type": "consumable",
+    "effect": "invincibility",
+    "value": 3
   }
 ]

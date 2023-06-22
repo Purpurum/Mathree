@@ -10,21 +10,21 @@ import java.io.BufferedReader
 class ItemsViewModel(context: Context): ViewModel() {
     var itemsList = loadItemsFromJson(context)
 
-    fun loadWeaponsFromJson(context: Context): List<Any> {
+    fun loadWeaponsFromJson(context: Context): List<Weapon> {
         val inputStream = context.assets.open("weapons.json")
         val jsonText = inputStream.bufferedReader().use(BufferedReader::readText)
         val itemType = object : TypeToken<List<Weapon>>() {}.type
         return Gson().fromJson(jsonText, itemType)
     }
 
-    fun loadArmorsFromJson(context: Context): List<Any> {
+    fun loadArmorsFromJson(context: Context): List<Armor> {
         val inputStream = context.assets.open("armors.json")
         val jsonText = inputStream.bufferedReader().use(BufferedReader::readText)
         val itemType = object : TypeToken<List<Armor>>() {}.type
         return Gson().fromJson(jsonText, itemType)
     }
 
-    fun loadConsumablesFromJson(context: Context): List<Any> {
+    fun loadConsumablesFromJson(context: Context): List<Consumable> {
         val inputStream = context.assets.open("consumables.json")
         val jsonText = inputStream.bufferedReader().use(BufferedReader::readText)
         val itemType = object : TypeToken<List<Consumable>>() {}.type

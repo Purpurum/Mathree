@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="400dp"
+    android:layout_height="400dp"
+    android:background="@drawable/background"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/buyAbilityDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="16dp"
+
+        android:text="Описание навыка"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/buyAbilityYes"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:background="@drawable/button2"
+        android:padding="8dp"
+        android:text="Да" />
+
+    <Button
+        android:id="@+id/buyAbilityNo"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:background="@drawable/button2"
+        android:padding="8dp"
+        android:text="Нет" />
+
+</LinearLayout>

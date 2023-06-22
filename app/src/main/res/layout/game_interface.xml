@@ -9,7 +9,8 @@
     </data>
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
 
     <fragment
         android:id="@+id/navHostFragment"
@@ -26,7 +27,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="120dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,10 +35,12 @@
 
         <Button
             android:id="@+id/essenceHeal"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="55dp"
+            android:layout_width="110dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="70dp"
+            android:background="@drawable/essencehpbutton"
             android:text="Лечение"
+            android:textColor="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -49,6 +52,8 @@
             android:layout_marginEnd="250dp"
             android:layout_marginBottom="70dp"
             android:text="@{String.valueOf(characterViewModel.character._essence)}"
+            android:textColor="#990099"
+            android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -60,6 +65,8 @@
             android:layout_marginStart="250dp"
             android:layout_marginBottom="70dp"
             android:text="@{String.valueOf(characterViewModel.character._health)}"
+            android:textColor="#FF0000"
+            android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -121,9 +128,10 @@
 
     <Button
         android:id="@+id/charData"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="120dp"
+        android:background="@drawable/button2"
         android:text="Персонаж"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

@@ -2,6 +2,7 @@ package com.purp.mathree.viewmodel
 
 import android.content.Context
 import android.util.Log
+import androidx.databinding.ObservableField
 import androidx.lifecycle.ViewModel
 import com.google.gson.Gson
 import com.purp.mathree.model.PlayerCharacter
@@ -36,19 +37,30 @@ class CharacterViewModel() : ViewModel() {
         return character
     }
 
-    //val playerCharacter: PlayerCharacter
-      //  get() = characterInstance?.get()!!
-
     fun saveCreatedCharacterToJSON(context: Context, data: MutableList<Any>) {
         var character: PlayerCharacter = PlayerCharacter(
             name = data[0].toString(),
             characterClass = data[1].toString(),
-            abilities = data[2] as List<Int>,
+            abilities = data[2] as MutableList<Int>,
             strength = data[3] as Int,
             intelligence = data[4] as Int,
             dexterity = data[5] as Int,
             icon = data[6] as String
             )
+        val gson = Gson()
+        val json = gson.toJson(character)
+        val fileName = "Character.json"
+
+        val file = File(context.filesDir, fileName)
+        try {
+            val fileWriter = FileWriter(file)
+            fileWriter.write(json)
+            fileWriter.close()
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+    }
+    fun saveCharacterToJSON(context: Context, character: PlayerCharacter) {
         val gson = Gson()
         val json = gson.toJson(character)
         val fileName = "Character.json"

@@ -1,7 +1,7 @@
 [
   {
     "id": 101,
-    "imagePath": "img/rogue.png",
+    "imagePath": "img/light-helm.png",
     "name": "Железный шлем",
     "type": "armor",
     "isEquipable": true,
@@ -12,7 +12,7 @@
   },
   {
     "id": 102,
-    "imagePath": "img/rogue.png",
+    "imagePath": "img/hood.png",
     "name": "Кожаный капюшон",
     "type": "armor",
     "isEquipable": true,
@@ -23,7 +23,7 @@
   },
   {
     "id": 103,
-    "imagePath": "img/rogue.png",
+    "imagePath": "img/pointy-hat.png",
     "name": "Шляпа волшебника",
     "type": "armor",
     "isEquipable": true,

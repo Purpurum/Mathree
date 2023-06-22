@@ -24,8 +24,8 @@ class EntityViewModel(application: Application) : AndroidViewModel(application) 
         entityAdapter = adapter
     }
 
-    fun getEnemies(): MutableList<Entity> {
-        return getFilteredEntities()
+    fun getEnemies(castleType: String, enemyGroupType: String): MutableList<Entity> {
+        return getFilteredEntities(castleType, enemyGroupType)
     }
 
     fun decreaseEntityHealth(entity: Entity, amount: Int) {
@@ -39,7 +39,7 @@ class EntityViewModel(application: Application) : AndroidViewModel(application) 
         entityLoader.removeEntity(entity)
     }
 
-    fun getFilteredEntities(): MutableList<Entity> {
-        return entityLoader.loadFilteredEntities("Dark")
+    fun getFilteredEntities(castleType: String, enemyGroupType: String): MutableList<Entity> {
+        return entityLoader.loadFilteredEntities(castleType, enemyGroupType)
     }
 }

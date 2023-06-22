@@ -1,20 +1,25 @@
 package com.purp.mathree.model
 
+import android.content.Context
 import android.util.Log
 import androidx.databinding.ObservableField
+import com.purp.mathree.viewmodel.AbilitiesViewModel
+import com.purp.mathree.viewmodel.ItemsViewModel
 import java.time.chrono.HijrahEra
+import kotlin.math.max
 
 data class PlayerCharacter(
-    var isAlive: Boolean = true,
+    val isAlive: ObservableField<Boolean> = ObservableField(true),
+    var invincibilityCounter: Int = 0,
     val name: String = "",
     val characterClass: String = "",
     var _essence: ObservableField<Int> = ObservableField(0),
     val icon: String = "",
     val damageType: String = "Physical",
-    val abilities: List<Int> = emptyList(),
-    val strength: Int = 0,
-    val intelligence: Int = 0,
-    val dexterity: Int = 0,
+    val abilities: MutableList<Int> = mutableListOf(),
+    var strength: Int = 0,
+    var intelligence: Int = 0,
+    var dexterity: Int = 0,
     val level: Int = 21-(strength+intelligence+dexterity),
     var physicalResistance: Float = (strength/100).toFloat(),
     var magicalResistance: Float = (strength/100).toFloat(),
@@ -35,13 +40,21 @@ data class PlayerCharacter(
         get() = _essence.get() ?: 0
 
     fun setHealth(amount: Int) {
-        val newHealth = health + amount
-        _health.set(newHealth)
+        if (invincibilityCounter == 0) {
+            var newHealth = health + amount
+            if (newHealth > maxhealth) {
+                newHealth = maxhealth
+            }
+            _health.set(newHealth)
 
-        Log.d("НОВОЕ ЗНАЧЕНИЕ ЗДОРОВЬЯ","${_health.get()} И ${health}")
-        if (newHealth <= 0) {
-            isAlive = false
-            Log.d("СОСТОЯНИЕ", "ЖИЗНЬ - ${isAlive}")
+            Log.d("НОВОЕ ЗНАЧЕНИЕ ЗДОРОВЬЯ", "${_health.get()} И ${health}")
+            if (newHealth <= 0) {
+                isAlive.set(false)
+                Log.d("СОСТОЯНИЕ", "ЖИЗНЬ - ${isAlive.get()}")
+            }
+        } else {
+            Log.d("КРЕСТОВАЯ ЗАЩИТА", "СРАБОТАЛА")
+            invincibilityCounter -= 1
         }
     }
 
@@ -51,15 +64,27 @@ data class PlayerCharacter(
         Log.d("НОВОЕ ЗНАЧЕНИЕ ЭССЕНЦИИ","${_essence} И ${essence}")
     }
 
-    /*fun giveItem(itemId: Int){
-        if (itemsInInventory != null) {
-            itemsInInventory.add(itemId)
+    fun giveItem(itemId: Int, context: Context?){
+        var context = context as Context
+        var item: Any? = null
+        if (itemId in 100..199){
+            item = ItemsViewModel(context).loadArmorsFromJson(context).find { it.id == itemId }
         }
-        else {
-            itemsInInventory = mutableListOf()
-            itemsInInventory.add(itemId)
+        if (itemId in 200..299){
+            item = ItemsViewModel(context).loadWeaponsFromJson(context).find { it.id == itemId }
         }
+        if (itemId in 300..399){
+            item = ItemsViewModel(context).loadConsumablesFromJson(context).find { it.id == itemId }
+        }
+        if (item != null){
+            itemsInInventory.add(item)
+        } else {}
+
         Log.d("ДОБАВЛЯЮ ПРЕДМЕТ!", "ИД ПРЕДМЕТА: ${itemId}, СПИСОК ПРЕДМЕТОВ:${itemsInInventory}")
-    }*/
+    }
+
+    fun addAbility(abilityId: Int){
+        abilities.add(abilityId)
+    }
 
 }

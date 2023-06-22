@@ -1,6 +1,47 @@
 [
   {
     "id": 1,
+    "name": "Дождь из ударов",
+    "damage": 25,
+    "statmodifier": "dexterity",
+    "modifier": 1.0,
+    "AOE": "True",
+    "icon": "img/arrow-flights.png",
+    "cooldown": 3
+  },
+  {
+    "id": 2,
+    "name": "Меткий удар",
+    "damage": 100,
+    "statmodifier": "dexterity",
+    "modifier": 2.0,
+    "AOE": "fase",
+    "icon": "img/arrow-scope.png",
+    "cooldown": 2
+  },
+  {
+    "id": 3,
+    "name": "Уворотливость",
+    "damage": 3,
+    "statmodifier": "dexterity",
+    "modifier": 1.0,
+    "AOE": "false",
+    "icon": "img/dodging.png",
+    "cooldown": 2
+  },
+  {
+    "id": 4,
+    "name": "Песок в глаза",
+    "damage": 25,
+    "statmodifier": "dexterity",
+    "modifier": 0.25,
+    "AOE": "false",
+    "stun": "True",
+    "icon": "img/sandstorm.png",
+    "cooldown": 2
+  },
+  {
+    "id": 5,
     "name": "Огненный шар",
     "damage": 100,
     "statmodifier": "intelligence",
@@ -10,7 +51,7 @@
     "cooldown": 0
   },
   {
-    "id": 2,
+    "id": 6,
     "name": "Заморозка",
     "damage": 10,
     "statmodifier": "intelligence",
@@ -20,7 +61,7 @@
     "cooldown": 3
   },
   {
-    "id": 2,
+    "id": 7,
     "name": "Корневая плеть",
     "damage": 10,
     "statmodifier": "intelligence",
@@ -28,5 +69,46 @@
     "AOE": "True",
     "icon": "img/thorn.png",
     "cooldown": 2
+  },
+  {
+    "id": 8,
+    "name": "Глубокая заморозка",
+    "damage": 100,
+    "statmodifier": "intelligence",
+    "modifier": 0.25,
+    "AOE": "False",
+    "stun": "True",
+    "icon": "img/brain-freeze.png",
+    "cooldown": 3
+  },
+  {
+    "id": 9,
+    "name": "Сильный удар",
+    "damage": 100,
+    "statmodifier": "strength",
+    "modifier": 2,
+    "AOE": "false",
+    "icon": "img/hammer-break.png",
+    "cooldown": 2
+  },
+  {
+    "id": 10,
+    "name": "Широкий удар",
+    "damage": 100,
+    "statmodifier": "strength",
+    "modifier": 0.25,
+    "AOE": "True",
+    "icon": "img/axe-swing.png",
+    "cooldown": 3
+  },
+  {
+    "id": 11,
+    "name": "Защита",
+    "damage": 3,
+    "statmodifier": "strength",
+    "modifier": 0.25,
+    "AOE": "True",
+    "icon": "img/checked-shield.png",
+    "cooldown": 1
   }
 ]

@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
+import com.purp.mathree.view.loadImageFromAsset
 import com.purp.mathree.viewmodel.CharacterViewModel
 
 class CharacterCreationActivity : AppCompatActivity() {
@@ -25,14 +27,21 @@ class CharacterCreationActivity : AppCompatActivity() {
         var characterClass: String = ""
         val data: MutableList<Any> = mutableListOf()
 
+        loadImageFromAsset(findViewById(R.id.imageView2),"img/wizard.png")
+        loadImageFromAsset(findViewById(R.id.imageView3),"img/warrior.png")
+        loadImageFromAsset(findViewById(R.id.imageView4),"img/rogue.png")
+
         rogueBtn.setOnClickListener {
             characterClass = getString(R.string.rogue)
+            findViewById<TextView>(R.id.textView4).setText(R.string.rogueDesc)
         }
         warriorBtn.setOnClickListener {
             characterClass = getString(R.string.warrior)
+            findViewById<TextView>(R.id.textView4).setText(R.string.warriorDesc)
         }
         wizardBtn.setOnClickListener {
             characterClass = getString(R.string.wizard)
+            findViewById<TextView>(R.id.textView4).setText(R.string.wizardDesc)
         }
         createBtn.setOnClickListener {
             if (characterClass == getString(R.string.rogue)) {
@@ -58,7 +67,7 @@ class CharacterCreationActivity : AppCompatActivity() {
             if (characterClass == getString(R.string.wizard)) {
                 data.add(nameET.text.toString())
                 data.add(characterClass)
-                data.add(mutableListOf<Int>(1,2,3))
+                data.add(mutableListOf<Int>(5))
                 data.add(5)
                 data.add(10)
                 data.add(5)

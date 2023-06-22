@@ -29,6 +29,6 @@ data class Consumable(
     val name: String = "",
     val type: String = "", // armor, consumable, weapon
     val isEquipable: Boolean = false,
-    val effect: String = "", // health...
+    val effect: String = "", // health, invincibility
     val value: Int = 0
 )

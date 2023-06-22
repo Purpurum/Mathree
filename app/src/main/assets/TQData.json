@@ -42,7 +42,7 @@
         "outcome": [
           {
             "type": "change text",
-            "value": "Вы решили не риссковать и ушли прочь."
+            "value": "Вы решили не рисковать и ушли прочь."
           }
         ],
         "ender": true
@@ -54,32 +54,32 @@
     "imgPath": "img/blood-castle.png",
     "type": "random",
     "id": 2,
-    "text": "You stumble upon a blood-soaked castle. What do you do?",
+    "text": "Вы видите рядом с замком кровавый фонтан, что вы будете делать?",
     "options": [
       {
-        "text": "Investigate further",
+        "text": "Добавлю своей крови",
         "outcome": [
           {
             "type": "hp",
             "value": -20
           },
           {
-            "type": "essence",
-            "value": 50
+            "type": "item",
+            "value": 301
           },
           {
-            "type": "item",
-            "value": 456
+            "type": "change text",
+            "value": "Из фонтана вынырнула бутылка с лечебным зельем."
           }
         ],
         "ender": true
       },
       {
-        "text": "Leave immediately",
+        "text": "Уйти сейчас же",
         "outcome": [
           {
             "type": "change text",
-            "value": "You decide it's best to leave the ominous castle behind."
+            "value": "Вы решили, что лучше уйти подальше от этого фонтана."
           }
         ],
         "ender": true

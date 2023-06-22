@@ -18,6 +18,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
+import com.purp.mathree.GameActivity
 import com.purp.mathree.R
 import com.purp.mathree.model.Outcome
 import com.purp.mathree.model.PlayerCharacter
@@ -76,7 +77,6 @@ class TQFragment() : Fragment() {
     }
 
     fun createDialog(chosenDialogue: TQEncounter, character: PlayerCharacter, view: View) {
-        //Вспомогательные функции
         fun outcomeHandler(outcomes: List<Outcome>, index: Int) {
             for (outcome in outcomes) {
                 when (outcome.type) { // "hp", "essence", "item", "open dialog", "change text"
@@ -98,7 +98,7 @@ class TQFragment() : Fragment() {
                         Log.d("ПОЛУЧЕН ПРЕДМЕТ!", "ИНВЕНТАРЬ: ${character.itemsInInventory}")
                         var newValue = outcome.value as Double
                         var newValueInt = newValue.toInt()
-                        ///character.giveItem(newValueInt)
+                        character.giveItem(newValueInt, context)
                         Log.d("ДОБАВЛЯЮ ПРЕДМЕТ!", "ИД ПРЕДМЕТА: ${newValueInt}, СПИСОК ПРЕДМЕТОВ:${character.itemsInInventory}")
                     }
                     "open dialog" -> {

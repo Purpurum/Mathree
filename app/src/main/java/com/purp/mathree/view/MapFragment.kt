@@ -64,15 +64,21 @@ class MapFragment : Fragment() {
                     scheduleTileZeroing(tile)
                 }
                 2 -> {
+                    var castleType: String = "Dark"
+                    var enemyGroupType: String = "Easy"
+                    val action = MapFragmentDirections.actionMapFragmentToBattleListFragment(castleType, enemyGroupType)
                     mapViewModel.updateTileClicked(tile, true)
                     Handler(Looper.getMainLooper()).postDelayed({
-                        findNavController().navigate(MapFragmentDirections.actionMapFragmentToBattleListFragment())}, 1000)
+                        findNavController().navigate(action)}, 1000)
                     scheduleTileZeroing(tile)
                 }
                 3 -> {
+                    var castleType = "Dark"
+                    var enemyGroupType = "Boss"
+                    val action = MapFragmentDirections.actionMapFragmentToBattleListFragment(castleType, enemyGroupType)
                     mapViewModel.updateTileClicked(tile, true)
                     Handler(Looper.getMainLooper()).postDelayed({
-                        findNavController().navigate(MapFragmentDirections.actionMapFragmentToBattleListFragment())}, 1000)
+                        findNavController().navigate(action)}, 1000)
                     scheduleTileZeroing(tile)
                 }
             }

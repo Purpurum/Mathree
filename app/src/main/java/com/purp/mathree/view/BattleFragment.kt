@@ -1,9 +1,11 @@
 package com.purp.mathree.view
 
 import android.content.Context
+import android.graphics.Rect
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
@@ -21,19 +23,27 @@ import com.purp.mathree.model.PlayerCharacter
 import com.purp.mathree.viewmodel.CharacterViewModel
 import com.purp.mathree.viewmodel.EntityViewModel
 import com.purp.mathree.viewmodel.AbilitiesViewModel
+import com.purp.mathree.viewmodel.ProgressViewModel
 
 
-class BattleFragment : Fragment(), EnemiesSizeChangeListener,AbilitySelectionChangeListener {
-
+class BattleFragment() : Fragment(), EnemiesSizeChangeListener,AbilitySelectionChangeListener {
     private lateinit var binding: FragmentBattleBinding
     private lateinit var entityViewModel: EntityViewModel
     private lateinit var entityAdapter: EntityAdapter
     private lateinit var abilityAdapter: AbilityAdapter
     private lateinit var playerCharacterViewModel: CharacterViewModel
     private lateinit var abilitiesViewModel: AbilitiesViewModel
+    private lateinit var enemyGroupType: String
+    private lateinit var castleType: String
+
     private val characterViewModel: CharacterViewModel by lazy {
         CharacterViewModel.getInstance()
     }
+    private val progressViewModel: ProgressViewModel by lazy {
+        ProgressViewModel.getInstance()
+    }
+
+
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -47,8 +57,13 @@ class BattleFragment : Fragment(), EnemiesSizeChangeListener,AbilitySelectionCha
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        arguments?.let {
+            enemyGroupType = it.getString("enemyGroupType", "")
+            castleType = it.getString("castleType", "")
+        }
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_battle, container, false)
         setupRecyclerViews()
+
         return binding.root
     }
 
@@ -66,8 +81,9 @@ class BattleFragment : Fragment(), EnemiesSizeChangeListener,AbilitySelectionCha
         binding.recyclerView.layoutManager = layoutManager
 
         var character = characterViewModel.setCharacter(context)
+        var gameProgress = progressViewModel.setProgress(context as Context)
 
-        entityAdapter = EntityAdapter(entityViewModel.getEnemies(), entityViewModel, abilityAdapter, character)
+        entityAdapter = EntityAdapter(entityViewModel.getEnemies(castleType, enemyGroupType), entityViewModel, abilityAdapter, character, gameProgress)
         entityAdapter.settEnemiesSizeChangeListener(this)
         binding.recyclerView.adapter = entityAdapter
         entityViewModel.setEntityAdapter(entityAdapter)
@@ -88,6 +104,7 @@ class BattleFragment : Fragment(), EnemiesSizeChangeListener,AbilitySelectionCha
     override fun onDestroyView() {
         super.onDestroyView()
         entityAdapter.settEnemiesSizeChangeListener(null)
+        Log.d("Боевой фрагмент","Боевой фрагмент стёрт")
     }
 
     override fun onResume() {

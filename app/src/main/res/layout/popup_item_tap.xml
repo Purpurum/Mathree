@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:textAlignment="center"
+    android:background="@drawable/background">
+
+    <TextView
+        android:id="@+id/equipText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="16dp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+
+    <TextView
+        android:id="@+id/equipItemDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/equipButtonYes"
+        android:layout_width="220dp"
+        android:layout_height="60dp"
+        android:background="@drawable/button2"
+        android:gravity="center"
+        android:text="Да" />
+
+    <Button
+        android:id="@+id/equipButtonNo"
+        android:layout_width="220dp"
+        android:layout_height="60dp"
+        android:background="@drawable/button2"
+        android:gravity="center"
+        android:text="Нет" />
+
+    <Button
+        android:id="@+id/equipButtonThrowAway"
+        android:layout_width="220dp"
+        android:layout_height="60dp"
+        android:background="@drawable/button2"
+        android:gravity="center"
+        android:text="Выбросить предмет" />
+
+
+</LinearLayout>

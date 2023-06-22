@@ -25,16 +25,16 @@
         <argument
             android:name="castleType"
             app:argType="string" />
-        <action
-            android:id="@+id/action_TQFragment_to_mapFragment"
-            app:destination="@id/mapFragment" />
     </fragment>
     <fragment
         android:id="@+id/battleListFragment"
         android:name="com.purp.mathree.view.BattleFragment"
         android:label="BattleListFragment" >
-        <action
-            android:id="@+id/action_battleListFragment_to_mapFragment"
-            app:destination="@id/mapFragment" />
+        <argument
+            android:name="castleType"
+            app:argType="string" />
+        <argument
+            android:name="enemyGroupType"
+            app:argType="string" />
     </fragment>
 </navigation>

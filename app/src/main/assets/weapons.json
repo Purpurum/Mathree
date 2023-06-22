@@ -1,7 +1,7 @@
 [
   {
     "id": 201,
-    "imagePath": "img/snowflake-1.png",
+    "imagePath": "img/gladius.png",
     "name": "Железный меч",
     "type": "weapon",
     "isEquipable": true,
@@ -11,7 +11,7 @@
   },
   {
     "id": 202,
-    "imagePath": "img/snowflake-1.png",
+    "imagePath": "img/pocket-bow.png",
     "name": "Короткий лук",
     "type": "weapon",
     "isEquipable": true,
@@ -21,8 +21,8 @@
   },
   {
     "id": 203,
-    "imagePath": "img/snowflake-1.png",
-    "name": "Деревянный жезл",
+    "imagePath": "img/wizard-staff.png",
+    "name": "Деревянный посох",
     "type": "weapon",
     "isEquipable": true,
     "damage": 10,
@@ -31,7 +31,7 @@
   },
   {
     "id": 204,
-    "imagePath": "img/snowflake-1.png",
+    "imagePath": "img/broadsword.png",
     "name": "Экскалибур",
     "type": "weapon",
     "isEquipable": true,
@@ -41,7 +41,7 @@
   },
   {
     "id": 205,
-    "imagePath": "img/snowflake-1.png",
+    "imagePath": "img/dragon-orb.png",
     "name": "Волшебный шар",
     "type": "weapon",
     "isEquipable": true,
