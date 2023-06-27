@@ -1,10 +1,14 @@
 package com.purp.mathree.view
 
+import android.animation.ArgbEvaluator
+import android.animation.ValueAnimator
 import android.graphics.Color
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.TextureView
+import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AccelerateDecelerateInterpolator
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.purp.mathree.R
@@ -52,21 +56,39 @@ class EntityAdapter(private val enemies: MutableList<Entity>,
         holder.bind(enemy)
         val selectedAbility: Ability? = abilityAdapter.getSelectedAbility()
 
+        fun animateBackgroundColor(color: Int) {
+            val startColor = Color.TRANSPARENT
+            val endColor = color
+
+            val animator = ValueAnimator.ofObject(ArgbEvaluator(), startColor, endColor)
+            animator.apply {
+                duration = 100 // Animation duration in milliseconds
+                repeatCount = 1 // Number of times to repeat the animation
+                repeatMode = ValueAnimator.REVERSE // Reverse the animation on repeat
+                interpolator = AccelerateDecelerateInterpolator()
+
+                addUpdateListener { animation ->
+                    val color = animation.animatedValue as Int
+                    holder.itemView.setBackgroundColor(color)
+                }
+            }
+            animator.start()
+        }
+
         fun enemyTurn(){
             for (enemy in enemies){
                 if (enemy.isStunned == false){
                     character.setHealth(-1*enemy.damage)
 
-
                 }
-                else {
-                    enemy.isStunned = false
-                    holder.itemView.setBackgroundColor(Color.parseColor("#000000"))
+                else if (enemy.isStunned == true) {
+                    holder.itemView.setBackgroundColor(Color.parseColor("#0000FF"))
                 }
             }
             for (ability in abilityAdapter.getAbilities()){
                 if (ability.cooldownCounter > 0){
                     ability.cooldownCounter -= 1
+
                 }
             }
         }
@@ -85,6 +107,7 @@ class EntityAdapter(private val enemies: MutableList<Entity>,
                                 enemiesToRemove.add(enemy)
                                 character.setEssence(enemy.essenceDrop)
                                 gameProgress.monstersSlayed += 1
+
                             }
                         }
                         for (enemyToRemove in enemiesToRemove) {
@@ -108,9 +131,11 @@ class EntityAdapter(private val enemies: MutableList<Entity>,
                 }
             } ?: run {
                 entityViewModel.decreaseEntityHealth(enemy, character.strength)
+                animateBackgroundColor(Color.RED)
                 if (!enemy.isAlive) {
                     entityViewModel.removeEntity(enemy)
                     character.setEssence(enemy.essenceDrop)
+
                 }
                 enemyTurn()
             }
@@ -129,7 +154,13 @@ class EntityAdapter(private val enemies: MutableList<Entity>,
             binding.enemy = entity
             binding.executePendingBindings()
         }
+
+        fun changeBackgroundColor(color: Int) {
+            itemView.setBackgroundColor(color)
+        }
     }
+
+
 
     fun removeEntity(entity: Entity) {
         val position = enemies.indexOf(entity)

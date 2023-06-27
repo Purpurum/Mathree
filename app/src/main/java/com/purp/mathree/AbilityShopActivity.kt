@@ -95,15 +95,6 @@ class AbilityShopActivity : AppCompatActivity() {
             buyDialog(this,11)
         }
 
-
-
-
-
-
-
-
-
-
         findViewById<ImageView>(R.id.abilityShopBack).setOnClickListener {
             val intent = Intent(this, HubActivity::class.java)
             startActivity(intent)
